@@ -17,6 +17,8 @@ if (hostIndex > -1) {
 // const DEV_HOST = 'http://10.122.61.224:8090' // 开发环境
 const DEV_HOST = 'http://10.122.61.200:8090 ' // 测试环境
 
+const IS_PROD = ['production'].includes(process.env.NODE_ENV)
+
 module.exports = {
   publicPath: '/',
   outputDir: 'dist', // 打包生成的生产环境构建文件的目录
@@ -31,7 +33,7 @@ module.exports = {
   },
   css: {
     modules: false, // 启用 CSS modules
-    extract: true, // 是否使用css分离插件
+    extract: IS_PROD, // 是否使用css分离插件
     sourceMap: false, // 开启 CSS source maps?
     loaderOptions: {} // css预设器配置项
   },
