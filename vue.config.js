@@ -19,6 +19,8 @@ const DEV_HOST = 'http://10.122.61.200:8090 ' // 测试环境
 
 const IS_PROD = ['production'].includes(process.env.NODE_ENV)
 
+const svgFilePath = resolve('src/assets/svg')
+
 module.exports = {
   publicPath: '/',
   outputDir: 'dist', // 打包生成的生产环境构建文件的目录
@@ -30,9 +32,34 @@ module.exports = {
     // 配置路径别名
     config.resolve.alias
       .set('@', resolve('src'))
+      .set('@icon', svgFilePath)
+
+      config.module
+      .rule('vue-svgicon')
+      .include.add(svgFilePath)
+      .end()
+      .test(/\.svg$/)
+      .use('svgicon')
+      .loader('@yzfe/svgicon-loader')
+      .options({
+          svgFilePath
+      })
+
+      config.module.rule('svg').exclude.add(svgFilePath).end()
+
+      // 推荐配置 transformAssetUrls
+      config.module
+          .rule('vue')
+          .use('vue-loader')
+          .loader('vue-loader')
+          .tap((opt) => {
+              opt.transformAssetUrls = opt.transformAssetUrls || {}
+              opt.transformAssetUrls.icon = ['data']
+              return opt
+          })
   },
   css: {
-    modules: false, // 启用 CSS modules
+    requireModuleExtension: true, // 启用 CSS modules
     extract: IS_PROD, // 是否使用css分离插件
     sourceMap: false, // 开启 CSS source maps?
     loaderOptions: {} // css预设器配置项
