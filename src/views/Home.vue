@@ -2,12 +2,13 @@
   <div class="home">
     <div>我是home页面</div>
     <quill-editor v-model="content"
-                ref="myQuillEditor"
-                :options="editorOption"
-                @change="onEditorBlur($event)"
-                @focus="onEditorFocus($event)"
-                @ready="onEditorReady($event)">
+      ref="myQuillEditor"
+      :options="editorOption"
+      @change="onEditorBlur($event)"
+      @focus="onEditorFocus($event)"
+      @ready="onEditorReady($event)">
     </quill-editor>
+    
     <el-button type="primary">主要按钮</el-button>
     <div :style="{ color: 'orange' }">
       <icon
@@ -34,30 +35,30 @@ export default {
   data: function() {
     return {
       editorOption: {
-                    placeholder: 'Hello World',
-                    modules: {
-                         toolbar: {
-                            container: [
-                                [{ size: ['small', false, 'large'] }],
-                                [{ color: [] }, { background: [] }], 
-                                [{ font: [] }],
-                                [{ align: [] }],
-                                ['bold', 'italic'],
-                                [{ list: 'ordered' }, { list: 'bullet' }],
-                                ['link', 'image'],
-                                [{ direction: 'rtl' }]
-                            ]
-                        },
-                       imageResize: {
-                            displayStyles: {
-                                backgroundColor: 'black',
-                                border: 'none',
-                                color: 'white'
-                            },
-                            modules: ['Resize', 'DisplaySize', 'Toolbar']
-                        }
-                    }
-                }
+        placeholder: 'Hello World',
+        modules: {
+          toolbar: {
+            container: [
+              [{ size: ['small', false, 'large'] }],
+              [{ color: [] }, { background: [] }], 
+              [{ font: [] }],
+              [{ align: [] }],
+              ['bold', 'italic'],
+              [{ list: 'ordered' }, { list: 'bullet' }],
+              ['link', 'image'],
+              [{ direction: 'rtl' }]
+            ]
+          },
+          imageResize: {
+            displayStyles: {
+              backgroundColor: 'black',
+              border: 'none',
+              color: 'white'
+            },
+            modules: ['Resize', 'DisplaySize', 'Toolbar']
+          }
+        }
+    }
     }
   },
   components: {
