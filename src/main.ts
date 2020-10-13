@@ -9,11 +9,19 @@ import 'element-ui/lib/theme-chalk/index.css'
 import { VueSvgIcon } from '@yzfe/vue-svgicon'
 import '@yzfe/svgicon/lib/svgicon.css'
 
+import VueQuillEditor from 'vue-quill-editor'
+// require styles
+import 'quill/dist/quill.core.css'
+import 'quill/dist/quill.snow.css'
+import 'quill/dist/quill.bubble.css'
+
 Vue.component('icon', VueSvgIcon)
 
 Vue.config.productionTip = false
 
 Vue.use(ElementUI, { size: 'small', zIndex: 3000 })
+ 
+Vue.use(VueQuillEditor /* { default global options } */)
 
 new Vue({
   router,

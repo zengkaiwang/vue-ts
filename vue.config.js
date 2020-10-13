@@ -21,6 +21,8 @@ const IS_PROD = ['production'].includes(process.env.NODE_ENV)
 
 const svgFilePath = resolve('src/assets/svg')
 
+const webpack = require('webpack')
+
 module.exports = {
   publicPath: '/',
   outputDir: 'dist', // 打包生成的生产环境构建文件的目录
@@ -57,6 +59,10 @@ module.exports = {
               opt.transformAssetUrls.icon = ['data']
               return opt
           })
+
+      config.plugin('provide').use(webpack.ProvidePlugin, [{
+          'window.Quill': 'quill'
+      }])
   },
   css: {
     requireModuleExtension: true, // 启用 CSS modules
