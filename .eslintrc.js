@@ -31,6 +31,7 @@ module.exports = {
     'keyword-spacing': 0,
     'vue/no-parsing-error': 0,
     'no-irregular-whitespace': 0,
+    'vue/no-unused-components': 0,
     'spaced-comment': 0
   }
 }

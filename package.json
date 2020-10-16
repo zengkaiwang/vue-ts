@@ -9,6 +9,9 @@
     "lint": "vue-cli-service lint"
   },
   "dependencies": {
+    "@scaler/npm-vue": "^1.0.5",
+    "@scaler/npm-vue-ugly": "^1.0.0",
+    "@scaler/test01": "^0.1.7",
     "@yzfe/svgicon": "^1.0.1",
     "@yzfe/vue-svgicon": "^4.0.1",
     "axios": "^0.20.0",
