@@ -9,6 +9,7 @@
     "lint": "vue-cli-service lint"
   },
   "dependencies": {
+    "@aiot/studio-render": "^0.3.2",
     "@scaler/npm-vue": "^1.0.5",
     "@scaler/npm-vue-ugly": "^1.0.2",
     "@scaler/test01": "^0.1.7",
