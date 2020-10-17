@@ -1,6 +1,6 @@
 <template>
   <div class="home">
-    <vue-toast></vue-toast>
+    <!-- <vue-toast></vue-toast> -->
     <vue-toast-ugly></vue-toast-ugly>
     <div>我是home页面</div>
     
