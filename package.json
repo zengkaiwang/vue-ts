@@ -9,6 +9,7 @@
     "lint": "vue-cli-service lint"
   },
   "dependencies": {
+    "@aiot/studio-libs": "^0.1.10",
     "@aiot/studio-render": "^0.1.0",
     "@scaler/npm-vue": "^1.0.5",
     "@scaler/npm-vue-ugly": "^1.0.2",
@@ -26,6 +27,8 @@
     "moment": "^2.29.0",
     "quill-image-drop-module": "^1.0.3",
     "quill-image-resize-module": "^3.0.0",
+    "sass": "^1.27.0",
+    "sass-loader": "^10.0.4",
     "vue": "^2.6.11",
     "vue-baidu-map": "^0.21.22",
     "vue-class-component": "^7.2.3",
