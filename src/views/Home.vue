@@ -16,6 +16,7 @@ import { Component, Vue } from 'vue-property-decorator'
 import { PreviewComp } from '@aiot/studio-render'
 // import QuillEdtor from './quill-editor.vue'
 import { Icon } from '@aiot/studio-libs'
+import '@aiot/studio-libs/dist/studio-libs.css'
 
 @Component({
   components: {
@@ -25,6 +26,6 @@ import { Icon } from '@aiot/studio-libs'
   }
 })
 export default class HomePage extends Vue {
-
+  
 }
 </script>
